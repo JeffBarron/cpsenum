@@ -53,7 +53,7 @@ print
 getIP = subprocess.check_output("ifconfig", stderr=subprocess.STDOUT, shell=True)
 ip = re.findall(r'[0-9]+(?:\.[0-9]+){3}', str(getIP))
 
-ip.insert(0, "*CPS* IP ADDRESSES:")
+ip.insert(0, "IP ADDRESSES:")
 
 # Can issue any command and save to pastebin here:
 getISSUE = subprocess.check_output("cat /etc/issue", stderr=subprocess.STDOUT, shell=True)
