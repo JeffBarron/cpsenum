@@ -69,10 +69,13 @@ pasteinfo = str(ip) + "\n" + str(getISSUE) + "\n" + str(getSERVICES) + "\n" + st
 
 thepaste = pasteinfo
 
+#remove api_user_key for guest pasting
+
 data = {'api_dev_key': API_KEY,
         'api_option': 'paste',
         'api_paste_code': thepaste,
-        'api_paste_format': 'python'}
+        'api_paste_format': 'python',
+         'api_user_key': '7859feced66ec05641d300b62b690fb3'}
 
 # sending post request and saving response as response object 
 r = requests.post(url=API_ENDPOINT, data=data)
