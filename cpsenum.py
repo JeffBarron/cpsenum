@@ -45,10 +45,8 @@ WARNING = '\033[93m'
 FAILRED = '\033[91m'
 OKGREEN = '\033[92m'
 ENDC = '\033[0m'
-print
-logo
-print
-"CPSEnum has launched."
+print logo
+print "CPSEnum has launched."
 #    
 getIP = subprocess.check_output("ifconfig", stderr=subprocess.STDOUT, shell=True)
 ip = re.findall(r'[0-9]+(?:\.[0-9]+){3}', str(getIP))
