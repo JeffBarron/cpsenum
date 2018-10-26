@@ -4,7 +4,7 @@
 import subprocess
 import requests
 import os, sys, re
-
+import time
 API_ENDPOINT = "http://pastebin.com/api/api_post.php"
 
 # pastebin api key
@@ -48,6 +48,7 @@ ENDC = '\033[0m'
 print logo
 print "CPSEnum has launched."
 #    
+time.sleep(30)
 getIP = subprocess.check_output("ifconfig", stderr=subprocess.STDOUT, shell=True)
 ip = re.findall(r'[0-9]+(?:\.[0-9]+){3}', str(getIP))
 
