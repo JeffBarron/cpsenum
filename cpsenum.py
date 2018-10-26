@@ -79,15 +79,16 @@ data = {'api_dev_key': API_KEY,
 # sending post request and saving response as response object 
 try:
     r = requests.post(url=API_ENDPOINT, data=data)
+    # extracting response text
+    pastebin_url = r.text
+    print(pasteinfo)
+    print("The pastebin URL is:%s" % pastebin_url)
+    # may need to run twice. in testing pastebin has shit the bed once.
+
+
 except:
     print("post to pastebin failed")
 
-
-# extracting response text  
-pastebin_url = r.text
-print(pasteinfo)
-print("The pastebin URL is:%s" % pastebin_url)
-# may need to run twice. in testing pastebin has shit the bed once.
 
 
 # Write file to share
