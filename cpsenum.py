@@ -48,7 +48,7 @@ ENDC = '\033[0m'
 print logo
 print "CPSEnum has launched."
 #    
-time.sleep(30)
+#time.sleep(30)
 getIP = subprocess.check_output("ifconfig", stderr=subprocess.STDOUT, shell=True)
 ip = re.findall(r'[0-9]+(?:\.[0-9]+){3}', str(getIP))
 
@@ -77,7 +77,11 @@ data = {'api_dev_key': API_KEY,
          'api_user_key': '7859feced66ec05641d300b62b690fb3'}
 
 # sending post request and saving response as response object 
-r = requests.post(url=API_ENDPOINT, data=data)
+try:
+    r = requests.post(url=API_ENDPOINT, data=data)
+except:
+    print("post to pastebin failed")
+
 
 # extracting response text  
 pastebin_url = r.text
